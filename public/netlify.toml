@@ -1,4 +1,2 @@
-[[redirects]]
-from="/*"
-to="/client/index.html"
-status=200
+[build]
+publish = "dist/public"
