@@ -1,0 +1,156 @@
+## 🌐 Proyecto: Predictor de Tendencias en Trading a 1 Minuto
+
+### 🎯 Visión General
+
+Desarrollar un sistema capaz de anticipar el comportamiento de precios en mercados financieros con un horizonte de tan solo 1 minuto es un desafío de alto nivel. Este proyecto busca precisamente eso: crear una plataforma web, apoyada en inteligencia artificial, que analice gráficos en tiempo real y genere predicciones con una probabilidad de éxito estimada.
+
+
+### 💡 Nombre Propuesto
+
+* **"TrendForecaster Pro"** o
+* **"Predictor Cuántico de Tendencias"**
+
+Ambos reflejan tecnología avanzada y un enfoque centrado en el análisis predictivo de corto plazo.
+
+
+### 🚀 Objetivo Principal
+
+Analizar activos financieros en tiempo real y predecir si su precio **subirá o bajará en el próximo minuto**, entregando además:
+
+* Una **probabilidad de éxito** de la predicción.
+* Un **punto de entrada o salida** sugerido.
+* Información clave del análisis técnico que respalde la decisión.
+
+
+### 🧩 Componentes Principales del Sistema
+
+#### 1. **Interfaz Web (Front-End)**
+
+* **Gráfico Interactivo**
+  Visualización de velas japonesas o líneas, con posibilidad de personalizar indicadores y marcos de tiempo.
+  *(Aunque el foco será el análisis en 1 minuto).*
+
+* **Selector de Activos**
+  Menús dinámicos para elegir el mercado (acciones, FOREX, criptomonedas) y el activo específico (como AAPL, EUR/USD, BTC/USD).
+
+* **Panel de Resultados**
+
+  * Predicción: `"Subirá"` o `"Bajará"`.
+  * Porcentaje de Éxito: `Ej. 75%`.
+  * Punto sugerido de Entrada/Salida: `Ej. $150.25`.
+  * Motivo de la Predicción: `Ej. "Detectado patrón de martillo invertido"`.
+
+* **Actualización en Tiempo Real**
+  Cada predicción y dato debe refrescarse automáticamente sin recarga de página.
+
+
+#### 2. **Recopilación de Datos en Tiempo Real (Back-End)**
+
+* **Fuentes de Datos**
+  Las APIs oficiales de brokers o exchanges como Binance, OANDA, Alpha Vantage o Twelve Data serán más efectivas que Google Finance, ya que esta última no provee datos de alta frecuencia de forma directa.
+
+* **Frecuencia de Actualización**
+  Idealmente, cada 1 a 5 segundos, para mantener la vigencia de la predicción a 1 minuto.
+
+* **Mercados y Activos Compatibles**
+
+  * Acciones (AAPL, TSLA, MSFT, etc.)
+  * FOREX (EUR/USD, USD/JPY, etc.)
+  * Criptomonedas (BTC, ETH, XRP, etc.)
+
+
+#### 3. **Módulo de Análisis y Predicción (Back-End - Núcleo Inteligente)**
+
+##### 🔍 Análisis Técnico
+
+* Cálculo en tiempo real de:
+
+  * **Medias móviles (SMA, EMA)**
+  * **Bandas de Bollinger**
+  * **RSI (Índice de Fuerza Relativa)**
+  * **MACD**
+  * **Estocástico**
+  * **Volumen**
+
+* **Reconocimiento de patrones de velas japonesas:**
+  Martillo, Doji, Envolventes, Estrella fugaz, Harami, etc.
+
+* **Patrones gráficos básicos:**
+  Triángulos, Banderas, Cuñas, Hombro-Cabeza-Hombro, etc.
+  *(Limitado por el marco temporal de 1 minuto).*
+
+##### 🤖 Inteligencia Artificial y Machine Learning
+
+* **Modelos de predicción sugeridos:**
+
+  * Redes Neuronales (LSTM o CNN para series temporales)
+  * Árboles de Decisión, Random Forest
+  * Regresión Logística
+  * SVM
+
+* **Entradas del modelo:**
+
+  * Indicadores técnicos
+  * Patrones reconocidos
+  * Precios crudos
+
+* **Entrenamiento y actualización periódica** para adaptarse a nuevas condiciones de mercado.
+
+##### 📈 Cálculo del Porcentaje de Éxito
+
+* **Backtesting**: Comparar predicciones con datos históricos.
+* **Métricas recomendadas:** Precisión, Recall, F1-score, matriz de confusión.
+
+##### 💲 Estrategia de Entrada/Salida
+
+Basado en:
+
+* El precio actual
+* Niveles de soporte/resistencia
+* Margen de volatilidad (ATR o desviación estándar)
+
+
+#### 4. **Arquitectura del Sistema**
+
+* **API REST**
+  Comunicación entre Front y Back usando endpoints limpios y seguros.
+
+* **Bases de Datos**
+
+  * *Series temporales:* InfluxDB, TimescaleDB (para datos de precios).
+  * *Relacional:* PostgreSQL, MySQL (para usuarios, configuraciones, registros de backtesting).
+
+* **Tecnologías Propuestas**
+
+  * *Back-End:* Python (Pandas, scikit-learn, TensorFlow, Flask), o Node.js con Express.
+  * *Front-End:* React (preferido), Angular o Vue.
+    Gráficos: TradingView Charts, D3.js, Chart.js.
+
+
+### 🧠 Fórmulas y Conceptos Clave a Integrar
+
+* Cálculo de indicadores técnicos con fórmulas precisas.
+* Lógica para detectar patrones de velas.
+* Integración opcional de gestión de riesgos:
+  (Stop-loss, tamaño de posición, análisis de volatilidad).
+
+
+### ⚠️ Retos y Consideraciones
+
+* **Alta Volatilidad a 1 Minuto:**
+  Ruido del mercado, latencia de red, y eventos externos pueden dificultar la predicción precisa.
+
+* **Overfitting (Sobreajuste):**
+  Entrenamientos mal validados pueden generar modelos poco realistas en vivo.
+
+* **Latencia y Costo de Datos:**
+  Las APIs en tiempo real precisas suelen tener costes elevados y limitaciones de uso.
+
+* **Eventos Imprevistos:**
+  Noticias económicas o geopolíticas pueden invalidar cualquier análisis técnico.
+
+* **No existe un "Santo Grial":**
+  El sistema debe comunicar con claridad sus limitaciones. No es un oráculo infalible.
+
+* **Legalidad:**
+  Se debe cumplir con regulaciones locales respecto al uso de datos financieros y la provisión de recomendaciones.
